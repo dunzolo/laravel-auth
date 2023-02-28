@@ -56,7 +56,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.posts.index' ? 'bg-secondary' : '' }}" href="{{}}">
-                                    <i class="fa-solid fa-newspaper fa-lg fa-fw"></i> Posts
+                                    <i class="fa-solid fa-newspaper fa-lg fa-fw"></i> Projects
                                 </a>
                             </li>
 
