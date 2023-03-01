@@ -24,6 +24,7 @@
                         <th>Id</th>
                         <th>Titolo</th>
                         <th>Slug</th>
+                        <th>Azioni</th>
                     </thead>
                     <tbody>
                         @foreach ($projects as $project)
@@ -31,6 +32,11 @@
                                 <td>{{ $project->id}}</td>
                                 <td>{{ $project->title}}</td>
                                 <td>{{ $project->slug}}</td>
+                                <td>
+                                    <a href="{{ route('admin.projects.show', $project->id)}}" title="Visualizza" class="btn btn-sm btn-square btn-secondary">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
