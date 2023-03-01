@@ -39,16 +39,11 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        // $form_data = $request->all();
         $form_data = $request->validated();
 
         $slug = Str::slug($request->title, '-');
 
         $form_data['slug'] = $slug;
-
-        // $new_project = new Project();
-        // $new_project->fill($form_data);
-        // $new_project->save();
 
         $new_project = Project::create($form_data);
 
@@ -86,7 +81,6 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        // $form_data = $request->all();
         $form_data = $request->validated();
 
         $slug = Str::slug($request->title, '-');
