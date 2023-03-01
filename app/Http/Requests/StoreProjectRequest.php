@@ -24,7 +24,22 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => ['required', 'unique:post', 'max:150'],
+            'content' => ['nullable']
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'title.required' => 'Il titolo è richiesto',
+            'title.unique' => 'Titolo già presente',
+            'title.max' => 'Il titolo non può essere lungo più di :max caratteri'
         ];
     }
 }
