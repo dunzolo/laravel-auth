@@ -39,7 +39,6 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        dd(new Project());
         // $form_data = $request->all();
         $form_data = $request->validated();
 
@@ -94,11 +93,9 @@ class ProjectController extends Controller
 
         $form_data['slug'] = $slug;
 
-        $new_project = new Project();
-        $new_project->fill($form_data);
-        $new_project->save();
+        $project->update($form_data);
 
-        return redirect()->route('admin.projects.index')->with('message', 'Progetto creato correttamente!');
+        return redirect()->route('admin.projects.index')->with('message', 'Progetto aggiornato correttamente!');
     }
 
     /**
