@@ -33,8 +33,11 @@
                                 <td>{{ $project->title}}</td>
                                 <td>{{ $project->slug}}</td>
                                 <td>
-                                    <a href="{{ route('admin.projects.show', $project->id)}}" title="Visualizza" class="btn btn-sm btn-square btn-secondary">
-                                        <i class="fas fa-eye"></i>
+                                    <a href="{{ route('admin.projects.show', $project->id)}}" title="Visualizza" class="btn btn-sm btn-square btn-primary">
+                                        <i class="fas fa-eye text-black"></i>
+                                    </a>
+                                    <a href="{{ route('admin.projects.edit', $project->id)}}" title="Modifica" class="btn btn-sm btn-square btn-warning">
+                                        <i class="fas fa-edit"></i>
                                     </a>
                                 </td>
                             </tr>
