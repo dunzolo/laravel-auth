@@ -11,6 +11,7 @@
                         <a class="btn btn-sm btn-primary" href="{{ route('admin.projects.index') }}">Torna all'elenco</a>
                     </div>
                 </div>
+                <hr>
             </div>
             <div class="col-12">
                 <label class="d-block"><strong>Titolo</strong></label>

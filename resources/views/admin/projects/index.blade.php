@@ -12,6 +12,7 @@
                         <a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn-primary">Aggiungi</a>
                     </div>
                 </div>
+                <hr>
             </div>
             @if (session('message'))
                 <div class="alert alert-success">
@@ -33,13 +34,13 @@
                                 <td>{{ $project->title}}</td>
                                 <td>{{ $project->slug}}</td>
                                 <td>
-                                    <a href="{{ route('admin.projects.show', $project->id)}}" title="Visualizza" class="btn btn-sm btn-square btn-primary">
+                                    <a href="{{ route('admin.projects.show', $project->slug)}}" title="Visualizza" class="btn btn-sm btn-square btn-primary">
                                         <i class="fas fa-eye text-black"></i>
                                     </a>
-                                    <a href="{{ route('admin.projects.edit', $project->id)}}" title="Modifica" class="btn btn-sm btn-square btn-warning">
+                                    <a href="{{ route('admin.projects.edit', $project->slug)}}" title="Modifica" class="btn btn-sm btn-square btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project->id )}}" method="POST">
+                                    <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project->slug )}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-square btn-danger delete-button" type="submit" title="Cancella">
